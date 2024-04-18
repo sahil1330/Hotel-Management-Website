@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Hotel</title>
+    <link rel="stylesheet" href="style/home style.css">
+</head>
+
+<body background="#black">
+    <header>
+        <h1 align="center">Hotel Guru</h1>
+    </header>
+    <center>
+        <br>
+        <section class="search">
+            Search: <input type="text" name="hotel" id="hotel" placeholder="Search Hotels Name">
+            <button><span><ion-icon name="search"></ion-icon></span></button><br><br>
+        </section>
+        </section>
+        <section>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="img/checkin.jpg" style="width:75% ;height: 50%;">
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="img/room1.jpg" style="width:75%; height: 50%;">
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="img/pool.jpg" style="width:75%;height: 50%;">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <img src="img/room2.jpg" height="200" width="100%" alt="OFFER">
+                <div class="OFFER"> 50% Off on First Booking</div>
+            </div>
+        </section>
+    </center>
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="home"></ion-icon></ion-icon></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="hotels.html">
+                    <span class="icon"><ion-icon name="bed"></ion-icon></ion-icon></span>
+                    <span class="title">Hotels</span>
+                </a>
+            </li>
+           
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="about.html">
+                    <span class="icon"><ion-icon name="information-circle"></ion-icon></span>
+                    <span class="title">About us</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="help.html">
+                    <span class="icon"><ion-icon name="help-circle"></ion-icon></ion-icon></span>
+                    <span class="title">Help</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="login.html">
+                    <span class="icon"><ion-icon name="log-in"></ion-icon></ion-icon></span>
+                    <span class="title">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="toggle">
+        <ion-icon name="menu" class="open"></ion-icon>
+        <ion-icon name="close" class="close"></ion-icon>
+    </div>
+    <footer>
+        <a href="help.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">&copy; 2023 | Hotel Guru</a>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let menuToggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        menuToggle.onclick = function () {
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+        //add active clas in selected list item
+        let list = document.querySelectorAll('.list');
+        for (let i = 0; i < list.length; i++) {
+            list[i].onclick = function () {
+                let j = 0;
+                while (j < list.length) {
+                    list[j++].className = 'list';
+                }
+                list[i].className = 'list active'
+            }
+        }
+    </script>
+    <script>
+        let slideIndex 
+        
+        = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" activate", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " activate";
+        }
+    </script>
+</body>
+
+</html>

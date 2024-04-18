@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hotels</title>
+    <link rel="stylesheet" href="style/hotels.css">
+    <script>
+        function book() {
+            alert("Room Booked <br>Take a screenshot <br> Your Payment will be auto debited");
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1 align="center">Hotel Guru</h1>
+        </header>
+        <center>
+    </div>
+    <br>
+    <div class="main-div">
+        <div class="card">
+            <div class="imgbox">
+                <img src="img/checkin.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>$50/Day and Night</h2>
+                <h2>Location: Bandra</h2>
+                <button onclick="book();" class="loginBtn">Book Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgbox">
+                <img src="img/room1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>$60/Day and Night</h2>
+                <h2>Location: Goregaon</h2>
+                <button onclick="book();" class="loginBtn">Book Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgbox">
+                <img src="img/room2.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>$70/Day and Night</h2>
+                <h2>Location: Vile Parle</h2>
+                <button onclick="book();" class="loginBtn">Book Now</button>
+            </div>
+        </div>
+    </div>
+    <div class="main-div2">
+        <div class="card">
+            <div class="imgbox">
+                <img src="img/room3.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>$80/Day and Night</h2>
+                <h2>Location: Andheri</h2>
+                <button onclick="book();" class="loginBtn">Book Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgbox">
+                <img src="img/room6.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>$90/Day and Night</h2>
+                <h2>Location: Bhayandar</h2>
+                <button onclick="book();" class="loginBtn">Book Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgbox">
+                <img src="img/room5.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>$100/Day and Night</h2>
+                <h2>Location: Malad</h2>
+                <input type="button" value="Book Now" onclick="book();" class="loginBtn">
+            </div>
+        </div>
+    </div>
+    </center>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="Homepage.html">
+                    <span class="icon"><ion-icon name="home"></ion-icon></ion-icon></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="list active">
+                <b></b>
+                <b></b>
+                <a href="hotels.html">
+                    <span class="icon"><ion-icon name="bed"></ion-icon></ion-icon></span>
+                    <span class="title">Hotels</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="about.html">
+                    <span class="icon"><ion-icon name="information-circle"></ion-icon></span>
+                    <span class="title">About us</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="help.html">
+                    <span class="icon"><ion-icon name="help-circle"></ion-icon></ion-icon></span>
+                    <span class="title">Help</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="login.html">
+                    <span class="icon"><ion-icon name="log-in"></ion-icon></ion-icon></span>
+                    <span class="title">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="toggle">
+        <ion-icon name="menu" class="open"></ion-icon>
+        <ion-icon name="close" class="close"></ion-icon>
+    </div>
+    <footer>
+        <a href="help.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">&copy; 2023 | Hotel Guru</a>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let menuToggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        menuToggle.onclick = function () {
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+        //add active clas in selected list item
+        let list = document.querySelectorAll('.list');
+        for (let i = 0; i < list.length; i++) {
+            list[i].onclick = function () {
+                let j = 0;
+                while (j < list.length) {
+                    list[j++].className = 'list';
+                }
+                list[i].className = 'list active'
+            }
+        }
+    </script>
+</body>
+
+</html>
